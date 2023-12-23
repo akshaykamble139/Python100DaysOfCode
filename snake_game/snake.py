@@ -11,7 +11,6 @@ class Snake:
         self.snake_list = []
         self.create_snake()
         self.head = self.snake_list[0]
-        self.head.color("red")
 
     def move_the_snake(self):
         for seg_num in range(len(self.snake_list) - 1, 0, -1):
@@ -28,10 +27,16 @@ class Snake:
         t = Turtle()
         t.penup()
         t.shape("square")
-        t.color("yellow")
+        t.color("white")
         t.goto(position)
         self.snake_list.append(t)
 
+    def reset(self):
+        for seg in self.snake_list:
+            seg.goto(1000, 1000)
+        self.snake_list.clear()
+        self.create_snake()
+        self.head = self.snake_list[0]
     def extend(self):
         self.add_segment(self.snake_list[-1].position())
 
