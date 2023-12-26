@@ -31,10 +31,10 @@ while len(guessed_states) < 50:
         guessed_states.append(answer_state)
         print(len(guessed_states))
 
-states_missed = []
-for state in all_states:
-    if state not in guessed_states:
-        states_missed.append(state)
+states_missed = [state for state in all_states if state not in guessed_states]
+# for state in all_states:
+#     if state not in guessed_states:
+#         states_missed.append(state)
 
 states_dict = {
     "States": states_missed
