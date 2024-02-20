@@ -40,4 +40,3 @@ if value <= 90.0:
             to_addrs=my_email,
             msg=f"Subject:Perfect price now!\n\n{message}"
         )
-        
